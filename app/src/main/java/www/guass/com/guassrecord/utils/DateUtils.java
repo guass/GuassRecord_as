@@ -24,6 +24,7 @@ public class DateUtils {
     public static final String PATTERN_HOUR_MINUTE_SECOND = "HH:mm:ss";
     public static final String FULL_YEAR = "yyyy-MM-dd";
     public static final String FULL_YEAR_2 = "yyyyMMdd";
+    public static final String FULL_YEAR_2_1 = "yyyy/MM/dd";
     public static final String FULL_YEAR_3 = "yyyyMMddHHmmss";
     public static final String FULL_YEAR_H_M = "yyyy-MM-dd HH:mm";
     public static final int WHEN_UNKNOWN = -2;

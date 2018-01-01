@@ -5,8 +5,6 @@ import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
-import android.widget.Button;
-import android.widget.TextView;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
@@ -16,7 +14,6 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 import www.guass.com.guassrecord.activitys.KaoqinActivity;
-import www.guass.com.guassrecord.activitys.RecordActivity;
 import www.guass.com.guassrecord.adapter.HomeAdapter;
 
 public class MainActivity extends AppCompatActivity {
@@ -36,10 +33,10 @@ public class MainActivity extends AppCompatActivity {
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+        FloatingActionButton fab = findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view)
@@ -53,13 +50,12 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    private HomeAdapter mHomeAdapter;
     private void initView(){
       mRecyclerView = findViewById(R.id.rv_main);
 
         Log.i(TAG, "initView: " + mRecyclerView);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
-        mHomeAdapter = new HomeAdapter(this);
+        HomeAdapter mHomeAdapter = new HomeAdapter(this);
         mRecyclerView.setAdapter(mHomeAdapter);
 
         mHomeAdapter.setOnItemClickListener(new HomeAdapter.OnItemClickListener() {
@@ -102,9 +98,4 @@ public class MainActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    /**
-     * A native method that is implemented by the 'native-lib' native library,
-     * which is packaged with this application.
-     */
-    public native String stringFromJNI();
 }
