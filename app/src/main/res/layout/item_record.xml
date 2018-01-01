@@ -21,6 +21,7 @@
         android:text="2018/1/1"
         android:gravity="center"
         android:textSize="20sp"
+        android:textColor="@color/colorPrimary"
         android:background="@drawable/shape_round_textview"
     />
 
@@ -34,10 +35,12 @@
         android:text=""/>
 
     <View
-        android:layout_marginTop="1dp"
+        android:layout_marginTop="5dp"
         android:background="@android:color/darker_gray"
         android:layout_alignParentBottom="true"
         android:layout_width="match_parent"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
         android:layout_height="1dp">
     </View>
 </RelativeLayout>

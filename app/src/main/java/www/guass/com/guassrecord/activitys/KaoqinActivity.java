@@ -42,7 +42,7 @@ public class KaoqinActivity extends SwipeBackActivity {
         mTextView_year = findViewById(R.id.tv_year);
 
         mTextView_week_day.setText(DateUtils.getWeekOfDate());
-        mTextView_year.setText(DateUtils.currentInFormat(DateUtils.FULL_YEAR));
+        mTextView_year.setText(DateUtils.currentInFormat(DateUtils.FULL_YEAR_2_1));
     }
 
     @Override
