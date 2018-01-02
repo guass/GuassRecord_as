@@ -53,6 +53,7 @@
                 android:id="@+id/tv_go_work_time"
                 android:layout_gravity="center"
                 android:text="9:00"
+                android:textColor="@android:color/holo_green_dark"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
         </LinearLayout>
@@ -70,6 +71,7 @@
                 android:id="@+id/tv_after_time"
                 android:layout_gravity="center"
                 android:text="19:00"
+                android:textColor="@android:color/holo_green_dark"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
         </LinearLayout>

@@ -132,4 +132,13 @@
             android:layout_height="wrap_content"/>
     </RelativeLayout>
 
+    <FrameLayout
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <fragment
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+        </fragment>
+    </FrameLayout>
 </RelativeLayout>
