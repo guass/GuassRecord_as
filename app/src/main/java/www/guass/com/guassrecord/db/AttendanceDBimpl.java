@@ -1,5 +1,7 @@
 package www.guass.com.guassrecord.db;
 
+import android.util.Log;
+
 import org.xutils.DbManager;
 import org.xutils.db.sqlite.WhereBuilder;
 import org.xutils.ex.DbException;
@@ -40,6 +42,20 @@ public class AttendanceDBimpl {
         }
     }
 
+    public List<AttendanceInfo>  findAll(){
+
+        try
+        {
+            return db.findAll(AttendanceInfo.class);
+        }
+        catch (DbException e)
+        {
+            e.printStackTrace();
+        }
+
+        return null;
+    }
+
     public void deleteAll(){
         try {
             db.delete(AttendanceInfo.class);
@@ -56,15 +72,16 @@ public class AttendanceDBimpl {
             AttendanceInfo info_new = new AttendanceInfo();
             info_new.setSign_in_time(record_date_min);
             info_new.setSign_in_time_date(record_date);
-
+            info_new.setWeek_day(DateUtils.getWeekOfDate());
             int diff = DateUtils.getIntervalTimeReal(record_date_min,"9:00",DateUtils.PATTERN_HOUR_MINUTE);
             if(diff > 0){
                 info_new.setEarly_time(diff);
             }
-            else {
+            else if(diff < 0){
                 info_new.setLate_time(Math.abs(diff));
             }
             add(info_new);
+            Log.i(TAG, "updateWorkRecord_in: " + findAll());
             return true;
         }
         return false;
@@ -75,6 +92,9 @@ public class AttendanceDBimpl {
         String record_date_min = DateUtils.currentInFormat(DateUtils.PATTERN_HOUR_MINUTE);
         List<AttendanceInfo> info = findInTimeByDate( DateUtils.currentInFormat(DateUtils.FULL_YEAR));
         if(info != null && info.size() == 1){
+
+            try
+            {
                 AttendanceInfo info_update = info.get(0);
                 info_update.setSign_back_time_date(record_date);
                 info_update.setSign_back_time(record_date_min);
@@ -85,7 +105,13 @@ public class AttendanceDBimpl {
                 else {
                     info_update.setOver_work_time(Math.abs(diff));
                 }
-                return true;
+                db.update(info_update);
+            }
+            catch (DbException e)
+            {
+                e.printStackTrace();
+            }
+            return true;
         }
         return false;
     }
