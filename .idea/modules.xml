@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/GuassRecord.iml" filepath="$PROJECT_DIR$/GuassRecord.iml" />
+      <module fileurl="file://E:\code\kaoqin\GuassRecord_as\GuassRecord.iml" filepath="E:\code\kaoqin\GuassRecord_as\GuassRecord.iml" />
+      <module fileurl="file://$PROJECT_DIR$/GuassRecord_as.iml" filepath="$PROJECT_DIR$/GuassRecord_as.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>

@@ -70,7 +70,7 @@ public class AttendanceDBimpl {
         return false;
     }
 
-    public void updateWorkRecord_out(){
+    public boolean updateWorkRecord_out(){
         String record_date = DateUtils.currentInFormat(DateUtils.FULL_YEAR);
         String record_date_min = DateUtils.currentInFormat(DateUtils.PATTERN_HOUR_MINUTE);
         List<AttendanceInfo> info = findInTimeByDate( DateUtils.currentInFormat(DateUtils.FULL_YEAR));
@@ -85,7 +85,9 @@ public class AttendanceDBimpl {
                 else {
                     info_update.setOver_work_time(Math.abs(diff));
                 }
+                return true;
         }
+        return false;
     }
 
     private List<AttendanceInfo> findInTimeByDate(String date){
