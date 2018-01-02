@@ -599,6 +599,23 @@ public class DateUtils {
         return 0;
     }
 
+    public static int getIntervalTimeReal(String time1, String time2, String format) {
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat(format);
+
+        try {
+            Date dt1 = simpleDateFormat.parse(time1);
+            Date dt2 = simpleDateFormat.parse(time2);
+
+            int result = (int) ((dt2.getTime() - dt1.getTime()) / (60 * 1000));
+            return result;
+
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+
+        return 0;
+    }
+
     public static int findIndex(int[] n) {
         int tmp = n[0];
 
