@@ -11,6 +11,7 @@ import android.widget.Toast;
 import www.guass.com.guassrecord.R;
 import www.guass.com.guassrecord.db.AttendanceDBimpl;
 import www.guass.com.guassrecord.utils.DateUtils;
+import www.guass.com.guassrecord.utils.VibrateHelp;
 
 /**
  * Created by guass on 2017/12/17.
@@ -78,6 +79,7 @@ public class KaoqinActivity extends SwipeBackActivity {
             Toast.makeText(this,"sign suceess!!",Toast.LENGTH_LONG).show();
         }
         else {
+            VibrateHelp.vSimple(KaoqinActivity.this,60);
             Toast.makeText(this,"today is already sign!!",Toast.LENGTH_LONG).show();
         }
     }
@@ -88,7 +90,9 @@ public class KaoqinActivity extends SwipeBackActivity {
             Toast.makeText(this,"sign suceess!!",Toast.LENGTH_LONG).show();
         }
         else {
+            VibrateHelp.vSimple(KaoqinActivity.this,60);
             Toast.makeText(this,"today no go work sign!!",Toast.LENGTH_LONG).show();
+
         }
     }
 
