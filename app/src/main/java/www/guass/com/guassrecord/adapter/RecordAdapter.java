@@ -95,6 +95,20 @@ public class RecordAdapter  extends RecyclerView.Adapter<RecordAdapter.MyViewHol
         return 0;
     }
 
+    public void clearAll() {
+        if(mAttendanceInfoList != null){
+            mAttendanceInfoList.clear();
+            notifyDataSetChanged();
+        }
+    }
+
+    public void addItem(AttendanceInfo info) {
+        if(info != null) {
+            mAttendanceInfoList.add(info);
+            notifyItemInserted(mAttendanceInfoList.size()); //Attention!
+        }
+    }
+
     class MyViewHolder extends RecyclerView.ViewHolder
     {
 
@@ -105,7 +119,7 @@ public class RecordAdapter  extends RecyclerView.Adapter<RecordAdapter.MyViewHol
 
         ImageView mImageView_icon;
 
-        public MyViewHolder(View view)
+        private MyViewHolder(View view)
         {
             super(view);
             mTextView_week_day = view.findViewById(R.id.tv_week_day);
