@@ -1,12 +1,14 @@
 package www.guass.com.guassrecord.activitys;
 
 import android.app.AlertDialog;
+import android.app.Dialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
@@ -17,6 +19,7 @@ import android.widget.TextView;
 
 import www.guass.com.guassrecord.R;
 import www.guass.com.guassrecord.adapter.RecordAdapter;
+import www.guass.com.guassrecord.db.AttendanceInfo;
 
 /**
  * Created by guass on 2017/12/17.
@@ -24,6 +27,7 @@ import www.guass.com.guassrecord.adapter.RecordAdapter;
 
 public class RecordActivity extends SwipeBackActivity {
 
+    private static final String TAG = "RecordActivity";
     private RecyclerView mRecyclerView;
 
     @Override
@@ -42,35 +46,34 @@ public class RecordActivity extends SwipeBackActivity {
         recordAdapter.setOnItemClickListener(new RecordAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(View view, int position) {
-
+                Log.i(TAG, "onItemClick: " + position);
+                showItemDetail(null);
             }
         });
 
     }
 
-    private void  showItemDetail(){
-        View contentView = LayoutInflater.from(this).inflate(0, null);
+    private void  showItemDetail(AttendanceInfo info){
+        View view = LayoutInflater.from(this).inflate(R.layout.detail_record, null);
 
-        AlertDialog dialog_pop_alert= new AlertDialog.Builder(this).create();
-        dialog_pop_alert.setOnCancelListener(new DialogInterface.OnCancelListener() {
-            @Override
-            public void onCancel(DialogInterface dialog) {
 
-            }
-        });
+        TextView confirm;    //确定按钮
+        final TextView content;    //内容
 
-        dialog_pop_alert.setCancelable(false);
-        dialog_pop_alert.setCanceledOnTouchOutside(false);
-        Window window = dialog_pop_alert.getWindow();
-        window.setType(WindowManager.LayoutParams.TYPE_SYSTEM_ALERT);
-        dialog_pop_alert.show();
-        window.getDecorView().setPadding(0, 0, 0, 0);
-        window.setGravity(Gravity.CENTER);
-        window.setContentView(contentView);
-        WindowManager.LayoutParams lp = window.getAttributes();
-        lp.width = 800;
-        lp.height = 600;
-        window.setAttributes(lp);
+        final Dialog dialog = new Dialog(this);
+        dialog.setContentView(view);
+        dialog.getWindow().setBackgroundDrawableResource(android.R.color.transparent);
+
+
+        dialog.show();
+        DisplayMetrics dm = getResources().getDisplayMetrics();
+        int displayWidth = dm.widthPixels;
+        int displayHeight = dm.heightPixels;
+        android.view.WindowManager.LayoutParams p = dialog.getWindow().getAttributes();  //获取对话框当前的参数值
+        p.width = (int) (displayWidth * 0.9);    //宽度设置为屏幕的0.5
+        p.height = (int) (displayHeight * 0.48);    //宽度设置为屏幕的0.5
+        dialog.setCanceledOnTouchOutside(false);// 设置点击屏幕Dialog不消失
+        dialog.getWindow().setAttributes(p);     //设置生效
     }
 
     @Override

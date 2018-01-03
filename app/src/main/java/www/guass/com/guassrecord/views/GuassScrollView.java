@@ -31,6 +31,7 @@ public class GuassScrollView extends ScrollView {
 
     public GuassScrollView(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
+        init(context);
     }
 
     private void init(Context context){
