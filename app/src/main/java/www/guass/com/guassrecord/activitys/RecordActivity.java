@@ -28,11 +28,16 @@ public class RecordActivity extends SwipeBackActivity {
         mRecyclerView = findViewById(R.id.rv_record);
 
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
-        RecordAdapter mHomeAdapter = new RecordAdapter(this);
-        mRecyclerView.setAdapter(mHomeAdapter);
+        RecordAdapter recordAdapter = new RecordAdapter(this);
+        mRecyclerView.setAdapter(recordAdapter);
 
 
+        recordAdapter.setOnItemClickListener(new RecordAdapter.OnItemClickListener() {
+            @Override
+            public void onItemClick(View view, int position) {
 
+            }
+        });
 
     }
 }

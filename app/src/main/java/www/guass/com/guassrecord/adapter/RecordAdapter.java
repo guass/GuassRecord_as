@@ -23,13 +23,15 @@ import www.guass.com.guassrecord.db.AttendanceInfo;
  * Created by guass on 2018/1/1.
  */
 
-public class RecordAdapter  extends RecyclerView.Adapter<RecordAdapter.MyViewHolder> {
+public class RecordAdapter  extends RecyclerView.Adapter<RecordAdapter.MyViewHolder> implements View.OnClickListener {
 
 
     private static final String TAG = "RecordAdapter";
     private Context mContext;
     private List<AttendanceInfo> mAttendanceInfoList;
     private AttendanceDBimpl mAttendanceDBimpl = AttendanceDBimpl.getInstance();
+
+    private OnItemClickListener mOnItemClickListener = null;
 
     private List<Drawable> mDrawableList = new ArrayList<>();
 
@@ -52,6 +54,7 @@ public class RecordAdapter  extends RecyclerView.Adapter<RecordAdapter.MyViewHol
     {
         View view = LayoutInflater.from(mContext).inflate(R.layout.item_record,null);
         RecordAdapter.MyViewHolder holder = new RecordAdapter.MyViewHolder(view);
+        view.setOnClickListener(this);
         return holder;
     }
 
@@ -82,7 +85,10 @@ public class RecordAdapter  extends RecyclerView.Adapter<RecordAdapter.MyViewHol
 
             holder.mImageView_icon.setBackground(mDrawableList.get(position % mDrawableList.size()));
 
+            holder.itemView.setTag(position);
+
         }
+
     }
 
     @Override
@@ -107,6 +113,23 @@ public class RecordAdapter  extends RecyclerView.Adapter<RecordAdapter.MyViewHol
             mAttendanceInfoList.add(info);
             notifyItemInserted(mAttendanceInfoList.size()); //Attention!
         }
+    }
+
+    @Override
+    public void onClick(View v) {
+        if (mOnItemClickListener != null) {
+            //注意这里使用getTag方法获取position
+            mOnItemClickListener.onItemClick(v,(int)v.getTag());
+        }
+    }
+
+    public  interface OnItemClickListener {
+        void onItemClick(View view , int position);
+    }
+
+
+    public void setOnItemClickListener(OnItemClickListener listener) {
+        this.mOnItemClickListener = listener;
     }
 
     class MyViewHolder extends RecyclerView.ViewHolder
