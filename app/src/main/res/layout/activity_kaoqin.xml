@@ -78,6 +78,7 @@
             android:layout_height="wrap_content"/>
 
         <Button
+            android:id="@+id/btn_go_work"
             android:text="上班签到"
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
@@ -122,6 +123,7 @@
             android:layout_height="wrap_content"/>
 
         <Button
+            android:id="@+id/btn_after_work"
             android:text="下班签退"
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
@@ -132,13 +134,4 @@
             android:layout_height="wrap_content"/>
     </RelativeLayout>
 
-    <FrameLayout
-        android:visibility="gone"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-        <fragment
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-        </fragment>
-    </FrameLayout>
 </RelativeLayout>

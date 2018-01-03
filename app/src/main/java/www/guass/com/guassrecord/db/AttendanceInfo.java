@@ -33,7 +33,7 @@ public class AttendanceInfo {
     @Column(name = "late_time")
     private int late_time; // 迟到分钟
 
-    @Column(name = "late_time")
+    @Column(name = "early_time")
     private int early_time;  //早到分钟
 
     @Column(name = "over_work_time")
@@ -41,6 +41,9 @@ public class AttendanceInfo {
 
     @Column(name = "leave_early_time")
     private int leave_early_time;  //加班分钟
+
+    @Column(name = "week_day")
+    private String week_day;
 
 
     public String getSign_in_time() {
@@ -105,5 +108,32 @@ public class AttendanceInfo {
 
     public void setLeave_early_time(int leave_early_time) {
         this.leave_early_time = leave_early_time;
+    }
+
+    public String getWeek_day()
+    {
+        return week_day;
+    }
+
+    public void setWeek_day(String week_day)
+    {
+        this.week_day = week_day;
+    }
+
+    @Override
+    public String toString()
+    {
+        return "AttendanceInfo{" +
+                "id=" + id +
+                ", sign_in_time='" + sign_in_time + '\'' +
+                ", sign_in_time_date='" + sign_in_time_date + '\'' +
+                ", sign_back_time='" + sign_back_time + '\'' +
+                ", sign_back_time_date='" + sign_back_time_date + '\'' +
+                ", late_time=" + late_time +
+                ", early_time=" + early_time +
+                ", over_work_time=" + over_work_time +
+                ", leave_early_time=" + leave_early_time +
+                ", week_day='" + week_day + '\'' +
+                '}';
     }
 }
