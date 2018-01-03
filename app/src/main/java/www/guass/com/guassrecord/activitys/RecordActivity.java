@@ -12,6 +12,7 @@ import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
@@ -57,13 +58,13 @@ public class RecordActivity extends SwipeBackActivity {
         View view = LayoutInflater.from(this).inflate(R.layout.detail_record, null);
 
 
-        TextView confirm;    //确定按钮
-        final TextView content;    //内容
-
         final Dialog dialog = new Dialog(this);
+
         dialog.setContentView(view);
         dialog.getWindow().setBackgroundDrawableResource(android.R.color.transparent);
 
+
+        dialog.setCancelable(true);
 
         dialog.show();
         DisplayMetrics dm = getResources().getDisplayMetrics();
@@ -74,7 +75,10 @@ public class RecordActivity extends SwipeBackActivity {
         p.height = (int) (displayHeight * 0.48);    //宽度设置为屏幕的0.5
         dialog.setCanceledOnTouchOutside(false);// 设置点击屏幕Dialog不消失
         dialog.getWindow().setAttributes(p);     //设置生效
+        dialog.setCanceledOnTouchOutside(true); //show 之后调用
     }
+
+
 
     @Override
     protected void onDestroy() {
