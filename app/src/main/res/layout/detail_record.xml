@@ -38,9 +38,9 @@
                 android:layout_height="wrap_content"/>
             <TextView
                 android:id="@+id/tv_record_date_value"
-                android:text="2018/1/2"
                 android:textSize="15sp"
                 android:gravity="bottom"
+                android:textColor="#019fff"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
         </LinearLayout>
@@ -88,9 +88,9 @@
                 android:layout_height="wrap_content"/>
             <TextView
                 android:id="@+id/tv_go_work_record_time_value"
-                android:text="2018/1/2"
                 android:textSize="15sp"
                 android:gravity="bottom"
+                android:textColor="#026dae"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
         </LinearLayout>
@@ -139,9 +139,9 @@
                 android:layout_height="wrap_content"/>
             <TextView
                 android:id="@+id/tv_after_work_sign_time_value"
-                android:text="2018/1/2"
                 android:textSize="15sp"
                 android:gravity="bottom"
+                android:textColor="#FF8C00"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
         </LinearLayout>
@@ -189,9 +189,9 @@
                 android:layout_height="wrap_content"/>
             <TextView
                 android:id="@+id/tv_late_time_value"
-                android:text="2018/1/2"
                 android:textSize="15sp"
                 android:gravity="bottom"
+                android:textColor="#B22222"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
         </LinearLayout>
@@ -238,10 +238,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
             <TextView
-                android:text="2018/1/2"
                 android:id="@+id/tv_over_work_time_value"
                 android:textSize="15sp"
                 android:gravity="bottom"
+                android:textColor="#B0C4DE"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
         </LinearLayout>
