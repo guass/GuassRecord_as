@@ -45,10 +45,10 @@ public class RecordActivity extends SwipeBackActivity {
 
 
         recordAdapter.setOnItemClickListener(new RecordAdapter.OnItemClickListener() {
+
             @Override
-            public void onItemClick(View view, int position) {
-                Log.i(TAG, "onItemClick: " + position);
-                showItemDetail(null);
+            public void onItemClick(View view, AttendanceInfo info) {
+                showItemDetail(info);
             }
         });
 
