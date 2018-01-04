@@ -75,11 +75,20 @@ public class RecordAdapter  extends RecyclerView.Adapter<RecordAdapter.MyViewHol
             holder.mTextView_week_day.setText(week_day);
             holder.mTextView_year_date.setText(in_time_date);
             if(!TextUtils.isEmpty(go_work_time)){
-                if(late_time > 5) holder.mTextView_work_in_time.setTextColor(Color.RED);
+                if(late_time > 5) {
+                    holder.mTextView_work_in_time.setTextColor(Color.RED);
+                }else {
+                    holder.mTextView_work_in_time.setTextColor(Color.GREEN);
+                }
                 holder.mTextView_work_in_time.setText(go_work_time);
             }
             if(!TextUtils.isEmpty(after_work_time)){
-                if(leave_early_time > 0)  holder.mTextView_work_after_time.setTextColor(Color.RED);
+                if(leave_early_time > 0) {
+                    holder.mTextView_work_after_time.setTextColor(Color.RED);
+                }
+                else {
+                    holder.mTextView_work_in_time.setTextColor(Color.GREEN);
+                }
                 holder.mTextView_work_after_time.setText(after_work_time);
             }
 
