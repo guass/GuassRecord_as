@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">GuassRecord</string>
     <string name="action_settings">Settings</string>
+    <string name="record_date">打卡日期</string>
+    <string name="go_work_record_time">上班签到时间</string>
+    <string name="after_work_sign_time">下班签退时间</string>
 </resources>
