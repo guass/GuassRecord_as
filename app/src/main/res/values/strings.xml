@@ -4,4 +4,6 @@
     <string name="record_date">打卡日期</string>
     <string name="go_work_record_time">上班签到时间</string>
     <string name="after_work_sign_time">下班签退时间</string>
+    <string name="late_time">迟到</string>
+    <string name="over_work_time">加班</string>
 </resources>
