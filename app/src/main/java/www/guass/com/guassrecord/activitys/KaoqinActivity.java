@@ -9,6 +9,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import www.guass.com.guassrecord.R;
+import www.guass.com.guassrecord.base.BaseActivity;
 import www.guass.com.guassrecord.db.AttendanceDBimpl;
 import www.guass.com.guassrecord.utils.DateUtils;
 import www.guass.com.guassrecord.utils.VibrateHelp;
@@ -17,7 +18,7 @@ import www.guass.com.guassrecord.utils.VibrateHelp;
  * Created by guass on 2017/12/17.
  */
 
-public class KaoqinActivity extends SwipeBackActivity {
+public class KaoqinActivity extends BaseActivity {
 
     private TextView mTextView_tongji;
     private TextView mTextView_week_day;

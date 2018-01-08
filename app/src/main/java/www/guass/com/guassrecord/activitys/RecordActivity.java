@@ -20,13 +20,14 @@ import android.widget.TextView;
 
 import www.guass.com.guassrecord.R;
 import www.guass.com.guassrecord.adapter.RecordAdapter;
+import www.guass.com.guassrecord.base.BaseActivity;
 import www.guass.com.guassrecord.db.AttendanceInfo;
 
 /**
  * Created by guass on 2017/12/17.
  */
 
-public class RecordActivity extends SwipeBackActivity {
+public class RecordActivity extends BaseActivity {
 
     private static final String TAG = "RecordActivity";
     private RecyclerView mRecyclerView;
