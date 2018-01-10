@@ -3,6 +3,7 @@ package www.guass.com.guassrecord.activitys;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -18,7 +19,7 @@ import www.guass.com.guassrecord.utils.VibrateHelp;
  * Created by guass on 2017/12/17.
  */
 
-public class KaoqinActivity extends BaseActivity {
+public class KaoqinActivity extends AppCompatActivity {
 
     private TextView mTextView_tongji;
     private TextView mTextView_week_day;
