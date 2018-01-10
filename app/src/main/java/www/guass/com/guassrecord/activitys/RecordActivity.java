@@ -58,6 +58,17 @@ public class RecordActivity extends BaseActivity {
     private void  showItemDetail(AttendanceInfo info){
         View view = LayoutInflater.from(this).inflate(R.layout.detail_record, null);
 
+        TextView tv_record_date_value = view.findViewById(R.id.tv_record_date_value);
+        TextView tv_go_work_record_time_value = view.findViewById(R.id.tv_go_work_record_time_value);
+        TextView tv_after_work_sign_time_value = view.findViewById(R.id.tv_after_work_sign_time_value);
+        TextView tv_late_time_value = view.findViewById(R.id.tv_late_time_value);
+        TextView tv_over_work_time_value = view.findViewById(R.id.tv_over_work_time_value);
+
+        tv_record_date_value.setText(info.getSign_in_time_date() + " " + info.getWeek_day());
+        tv_go_work_record_time_value.setText(info.getSign_in_time());
+        tv_after_work_sign_time_value.setText(info.getSign_back_time());
+        tv_late_time_value.setText(info.getLate_time() + "m");
+        tv_over_work_time_value.setText(info.getOver_work_time() + "m");
 
         final Dialog dialog = new Dialog(this);
 
